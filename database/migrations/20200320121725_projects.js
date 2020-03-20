@@ -23,7 +23,7 @@ exports.up = function(knex) {
         .notNullable();
       tbl.string('notes', 128)
       tbl.boolean('status')
-        .defaultTo()
+        .defaultTo('false')
         .notNullable();
       tbl.integer('projects_id')
         .unsigned()
