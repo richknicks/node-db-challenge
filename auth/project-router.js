@@ -67,13 +67,11 @@ router.get('/resources', ( req, res)=>{
             router.post('/:id/tasks', (req, res) => {
                 const{id}=req.params
                 Projects.findById(id)
-                .then(task => {
-                    
+                .then(task => {   
                         Projects.addTasks(req.body, id)
                         .then(tasks => {
                         res.status(201).json(tasks);
-                    })
-                    
+                    })   
                 })
                     .catch(error => {
                         res.status(500).json({ message: 'Failed to create new task'});
